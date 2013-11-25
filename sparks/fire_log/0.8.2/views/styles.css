@@ -1,0 +1,97 @@
+
+
+.logContainer{
+	height:auto; 
+	display:block; 
+	font-size:13px;
+	line-height:18px;
+	overflow:auto;
+	text-align:left;
+	color:#8f9d6a;
+	font-weight:normal;
+	overflow:auto;
+	padding: 10px 20px 20px 0px;
+	font-family:"Monaco",Verdana,Arial,sans-serif;
+	
+	
+	clear:both;
+}
+
+
+#nav, 
+.paginationWrapper, 
+#filterBar{
+	
+	height:auto;
+
+	padding: 20px 0px 20px 0px;
+	margin: 0px 20px 10px 20px;
+	
+	color:#c26549;
+	
+	
+}
+
+#nav{
+	float:left;
+	width:110px;
+	padding:0;
+}
+
+.paginationWrapper, 
+#filterBar{
+	display:block;
+	margin-left:0;
+	padding:0px;
+	font-size:12px;
+}
+
+
+
+
+
+#filterBar{
+	margin-bottom:5px;
+
+}
+
+
+
+.paginationWrapper strong{
+	display:inline-block;
+	padding: 5px 8px 5px 8px;
+	margin:0px;
+}
+
+.paginationWrapper a, 
+#filterBar a{
+	padding: 5px 8px 5px 8px;
+	margin:0px;
+	display:inline-block;
+}
+
+.debug, .error, .info{
+	
+	padding:4px;
+	margin:0;
+	white-space: pre-wrap;
+}
+
+a.deleteFile{
+	float:right;
+	color:#c26549;
+	
+}
+
+.debug{
+	color:#8f9d6a;
+	
+}
+.error{
+	color:#c26549;
+	
+}
+.info{
+	color:#d8ce84;
+	
+}
