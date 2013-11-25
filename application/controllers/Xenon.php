@@ -33,7 +33,7 @@ class Xenon extends CI_Controller {
 	{
 		$data['title'] = 'BetaWatch';
 		$data['projectname'] = 'BetaWatch';
-		$data['main_content'] = 'welcome_message';
+		$data['main_content'] = 'xenon';
 		$data['where'] = $this->uri->segment(1);
 		$data['whereiam'] = $this->uri->segment(1);
 		if($this->session->userdata('enable_profiler') == 'TRUE'){
