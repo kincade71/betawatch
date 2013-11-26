@@ -32,11 +32,11 @@ foreach ($dirs as $dir) {
     <div class="tab-pane active" id="tab1">
     <table class="table table-bordered table-striped">
       <?php 
-
-      foreach ($code as $c => $ode) {
 		echo "<th>Back End</th>";
 		echo "<th>Front End</th>";
 		echo "<th>FRU</th>";
+      foreach ($code as $c => $ode) {
+
       	echo "<tr>";
       	foreach ($ode as $sd) {
       		$pushtimefile=$sd['dir']."/pushtime";

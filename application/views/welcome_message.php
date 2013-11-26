@@ -25,7 +25,7 @@ foreach ($dirs as $dir) {
 <div class="tabbable tabs-left"> 
   <ul class="nav nav-tabs">
     <li class="active"><a href="#tab1" data-toggle="tab">Betawatch</a></li>
-    <!--<li><a href="#tab2" data-toggle="tab">Neon</a></li>-->
+    <li><a href="#tab2" data-toggle="tab">Neon</a></li>
   </ul>
   <div class="tab-content">
   
@@ -54,9 +54,9 @@ foreach ($dirs as $dir) {
       ?></table>
     </div>
     
-  <!--<div class="tab-pane" id="tab2">
+  <div class="tab-pane " id="tab2">
       <p>Howdy, I'm in Section 2.</p>
-    </div>-->
+    </div>
     
   </div>
 </div>
