@@ -57,7 +57,7 @@ body {
       <div class="navbar-inner">
     <div class="container-fluid">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="<?= base_url()?>">
-      TracSuite
+      BetaWatch
       </a>
           <div class="nav-collapse">
           <?php if($this->session->userdata('lights') == 'inverse'){ ?>
@@ -71,31 +71,20 @@ body {
           	<a href="<?= base_url()?><?= ($whereiam)?$whereiam.'/':'welcome/' ?>lightsoff" class="btn btn-primary btn-block pull-right tipping visible-phone" data-toggle="tooltip" title data-original-title="Click to turn the lights off." data-placement="bottom"><i class="fa fa-lightbulb-o fa-lg"></i></a>
           	<br class="visible-phone"/>
           <?php }?>
-        <form action="<?= base_url()?><?= ($whereiam != 'team')?'week':$whereiam.'/' ?>" method="post" class="navbar-form pull-right">
-              <input type="text" placeholder="start date (dd-mm-yyyy)" autocomplete="off" id="from" name="day" class="span2">
-              <input type="text" placeholder="end date (dd-mm-yyyy)" autocomplete="off" id="to" name="too" class="span2">
-              <input type="hidden"  autocomplete="off"  name="username" class="span2" value="<?= $this->input->post('username'); ?>">
-              <input type="hidden"  autocomplete="off"  name="dates" class="span2" value="<?= $this->input->post('dates'); ?>">
-              <button type="submit" class="btn btn-primary">Submit Range</button>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-            </form>
-            <form action="<?= base_url()?>ticket/getticket" method="post" class="navbar-form pull-right">
-              <input type="text" placeholder="ticket number" autocomplete="off" id="ticket" name="ticket" class="span2">
-              <button type="submit" class="btn btn-primary">Get Ticket</button>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-            </form>
-<ul class="nav">
-              <li class="<?= ($whereiam == NULL)?'active':NULL; ?>"><a href="<?= base_url() ?>" class="tipping" data-placement="bottom" title="Home"><i class="fa fa-home <?= ($whereiam == NULL)?'fa-2x here':'fa-lg'; ?>"></i></a></li>
-              <li class="<?= ($whereiam == 'chart')?'active':NULL; ?>"><a href="<?= base_url() ?>chart/%20" class="tipping" data-placement="bottom" title="Charts"><i class="fa fa-bar-chart-o <?= ($whereiam == 'chart here')?'fa-2x':'fa-lg'; ?>"></i></a></li>
-              <li class="<?= ($whereiam == 'user')?'active':NULL; ?>"><a href="<?= base_url() ?>user/" class="tipping" data-placement="bottom" title="User"><i class="fa fa-user <?= ($whereiam == 'user')?'fa-2x here':'fa-lg'; ?>"></i></a></li>
-              <li class="<?= ($whereiam == 'team')?'active':NULL; ?>"><a href="<?= base_url() ?>team/" class="tipping" data-placement="bottom" title="Teams"><i class="fa fa-users <?= ($whereiam == 'team')?'fa-2x here':'fa-lg'; ?>"></i></a></li>
-              <li class="<?= ($whereiam == 'systems')?'active':NULL; ?>"><a href="<?= base_url() ?>systems/" class="tipping" data-placement="bottom" title="Systems"><i class="fa fa-cog  <?= ($whereiam == 'systems')?'fa-2x fa-spin here':'fa-lg';?>"></i></a></li>
+
+        <ul class="nav">
+              <li class="<?= ($whereiam == NULL)?'active':NULL; ?>"><a href="<?= base_url() ?>" class="tipping" data-placement="bottom" title="Home">Argon</a></li>
+              <li class="<?= ($whereiam == 'customeracceptence')?'active':NULL; ?>"><a href="<?= base_url() ?>customeracceptence/" class="tipping" data-placement="bottom" title="Customeracceptance">Customeracceptence</a></li>
+              <li class="<?= ($whereiam == 'helium')?'active':NULL; ?>"><a href="<?= base_url() ?>helium/" class="tipping" data-placement="bottom" title="Helium">Helium</a></li>
+              <li class="<?= ($whereiam == 'neon')?'active':NULL; ?>"><a href="<?= base_url() ?>neon/" class="tipping" data-placement="bottom" title="Neon">Neon</a></li>
+              <li class="<?= ($whereiam == 'nitrogen')?'active':NULL; ?>"><a href="<?= base_url() ?>nitrogen/" class="tipping" data-placement="bottom" title="Nitrogen">Nitrogen</a></li>
+              <li class="<?= ($whereiam == 'oxygen')?'active':NULL; ?>"><a href="<?= base_url() ?>oxygen/" class="tipping" data-placement="bottom" title="Oxygen">Oxygen</a></li>
+              <li class="<?= ($whereiam == 'xenon')?'active':NULL; ?>"><a href="<?= base_url() ?>xenon/" class="tipping" data-placement="bottom" title="Xenon">Xenon</a></li>
             </ul>
       </div>
         </div>
   </div>
-    </div>
-    <div class="container-fluid">
+    </div>    <div class="container-fluid">
   <div class="row-fluid">
     <div class="span12 ">
 	<h1><?php if( $today ) echo $this->lang->line( 'fire_log_today' ); ?></h1>
