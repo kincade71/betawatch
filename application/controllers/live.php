@@ -33,7 +33,7 @@ class Live extends CI_Controller {
 	{
 		$data['title'] = 'BetaWatch';
 		$data['projectname'] = 'BetaWatch';
-		$data['main_content'] = 'xenon';
+		$data['main_content'] = 'welcome_message';
 		$data['where'] = $this->uri->segment(1);
 		$data['whereiam'] = $this->uri->segment(1);
 		$data['navigation'] = $this->read->servernames();
