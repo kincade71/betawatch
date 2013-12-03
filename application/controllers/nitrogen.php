@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Nitrogen extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,26 +21,25 @@ class Welcome extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		
-		if($this->input->cookie('lights')){
-				$lights = array(
-						'lights'  => $this->input->cookie('lights'),
-				);
-				$this->session->set_userdata($lights);
-			}
+	if($this->input->cookie('lights')){
+			$lights = array(
+					'lights'  => $this->input->cookie('lights'),
+			);
+			$this->session->set_userdata($lights);
+		}
 	}
 	
 	public function index()
 	{
 		$data['title'] = 'BetaWatch';
 		$data['projectname'] = 'BetaWatch';
-		$data['main_content'] = 'welcome_message';
+		$data['main_content'] = 'nitrogen';
 		$data['where'] = $this->uri->segment(1);
-		$data['whereiam'] = 'argon';
+		$data['whereiam'] = $this->uri->segment(1);
 		$data['navigation'] = $this->read->servernames();
-		$data['enviorment01'] = $this->read->server01('argon');
-		$data['enviorment02'] = $this->read->server02('argon');
-		$data['history'] = $this->read->history('argon');
+		$data['enviorment01'] = $this->read->server01($this->uri->segment(1));
+		$data['enviorment02'] = $this->read->server02($this->uri->segment(1));
+		$data['history'] = $this->read->history($this->uri->segment(1));
 		if($this->session->userdata('enable_profiler') == 'TRUE'){
 			$this->output->enable_profiler(TRUE);
 		}

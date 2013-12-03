@@ -35,3 +35,6 @@
     -webkit-transition: background 1s linear;
     -webkit-animation: pulse 2s linear infinite;
 }
+.alert{
+	color:#333;	
+}

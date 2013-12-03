@@ -64,7 +64,7 @@ $autoload['libraries'] = array('unit_test','session');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url','file');
+$autoload['helper'] = array('url','file','array');
 
 
 /*
@@ -109,7 +109,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array();
+$autoload['model'] = array('read');
 
 /*
 | -------------------------------------------------------------------

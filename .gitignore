@@ -1,0 +1,11 @@
+*/config/development
+*/logs/log-*.php
+*/logs/!index.html
+*/cache/*
+*/cache/!index.html
+.DS_Store
+.buildpath
+.settings/
+.project
+.htaccess
+*.prefs
