@@ -26,7 +26,7 @@
 				       echo "<strong>Code base not defined</strong><br/>";
 				}
 				echo'">';
-				echo "<td>".$sd->_id."<br/>";
+				echo "<td>";
 				switch ($sd->codebase) {
 				    case 'fe':
 				        echo "Front End<br/>";
@@ -67,7 +67,7 @@
 				       echo "<strong>Code base not defined</strong><br/>";
 				}
 				echo'">';
-				echo "<td>".$sd->_id."<br/>";
+				echo "<td>";
 				switch ($sd->codebase) {
 				    case 'fe':
 				        echo "Front End<br/>";
@@ -108,7 +108,7 @@
 				       echo "<strong>Code base not defined</strong><br/>";
 				}
 				echo'">';
-				echo "<td>".$sd->_id."<br/>";
+				echo "<td>";
 				switch ($sd->codebase) {
 				    case 'fe':
 				        echo "Front End<br/>";
