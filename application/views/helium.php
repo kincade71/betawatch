@@ -11,6 +11,7 @@
   <div class="tab-content">
   
     <div class="tab-pane active" id="tab1">
+    <h1 class="lead pull-right"><?= $whereiam?>beta01</h1>
     <table class="table table-bordered table-striped">
       <?php      	
       	foreach ($enviorment01 as $sd) {
@@ -52,6 +53,7 @@
     </div>
     
         <div class="tab-pane " id="tab2">
+        <h1 class="lead pull-right"><?= $whereiam?>beta02</h1>
     <table class="table table-bordered table-striped">
       <?php      	
       	foreach ($enviorment02 as $sd) {
@@ -93,6 +95,7 @@
     </div>
     
   <div class="tab-pane " id="tab3">
+  <h1 class="lead pull-right"><?= $whereiam?> history</h1>
           <table class="table table-bordered table-striped">
       <?php      	
       	foreach ($history as $sd) {
