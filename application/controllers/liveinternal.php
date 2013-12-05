@@ -38,6 +38,7 @@ class Liveinternal extends CI_Controller {
 		$data['where'] = $this->uri->segment(1);
 		$data['whereiam'] = $this->uri->segment(1);
 		$data['navigation'] = $this->read->servernames();
+		$data['overview'] = $this->read->history($this->uri->segment(1));
 		$data['enviorment01'] = $this->read->history('live-internal');
 		$data['enviorment02'] = $this->read->history('live-internal');
 		$data['history'] = $this->read->history('live-internal');

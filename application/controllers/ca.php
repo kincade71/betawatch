@@ -37,6 +37,7 @@ class Ca extends CI_Controller {
 		$data['where'] = $this->uri->segment(1);
 		$data['whereiam'] = $this->uri->segment(1);
 		$data['navigation'] = $this->read->servernames();
+		$data['overview'] = $this->read->history($this->uri->segment(1));
 		$data['enviorment01'] = $this->read->server01($this->uri->segment(1));
 		$data['enviorment02'] = $this->read->server02($this->uri->segment(1));
 		$data['history'] = $this->read->history($this->uri->segment(1));

@@ -66,7 +66,7 @@ body {
 
         <ul class="nav">
         <?php foreach($navigation as $nav){?>
-        		<li class="<?= ($whereiam == $nav)?'active':NULL; ?>"><a href="<?= base_url() ?><?= str_replace('-', '', $nav) ?>" class="tipping" data-placement="bottom" title="<?= ucfirst($nav) ?>"><?= ucfirst($nav) ?></a></li>
+        		<li class="<?= ($whereiam == str_replace('-', '', $nav))?'active':NULL; ?>"><a href="<?= base_url() ?><?= str_replace('-', '', $nav) ?>" class="tipping" data-placement="bottom" title="<?= ucfirst($nav) ?>"><?= ucfirst($nav) ?></a></li>
         <?php }?>
             </ul>
       </div>

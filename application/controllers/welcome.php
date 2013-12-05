@@ -38,6 +38,7 @@ class Welcome extends CI_Controller {
 		$data['where'] = $this->uri->segment(1);
 		$data['whereiam'] = 'argon';
 		$data['navigation'] = $this->read->servernames();
+		$data['overview'] = $this->read->history('argon');
 		$data['enviorment01'] = $this->read->server01('argon');
 		$data['enviorment02'] = $this->read->server02('argon');
 		$data['history'] = $this->read->history('argon');
