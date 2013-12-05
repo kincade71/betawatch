@@ -23,6 +23,9 @@
 				    case '0':
 				        echo "alert alert-error";
 				        break;
+				    case ($sd->datestamp - time())<=10:
+			    		echo "alert alert-warning";
+			    		break;
 				    default:
 				       echo "<strong>Code base not defined</strong><br/>";
 				}
@@ -84,7 +87,7 @@
 				echo "".$sd->datestamp."<br/>";
 				echo "".$sd->md5."<br/>";
 				echo "".date('m-d-Y',$sd->release)."<br/>";
-				//echo "".$sd->server."<br/>";
+				echo "".$sd->server."<br/>";
 				echo "</tr>";
       	}
       	
@@ -126,7 +129,7 @@
 				echo "".$sd->datestamp."<br/>";
 				echo "".$sd->md5."<br/>";
 				echo "".date('m-d-Y',$sd->release)."<br/>";
-				//echo "".$sd->server."<br/>";
+				echo "".$sd->server."<br/>";
 				echo "</tr>";
       	}
       	
@@ -168,7 +171,7 @@
 				echo "".$sd->datestamp."<br/>";
 				echo "".$sd->md5."<br/>";
 				echo "".date('m-d-Y',$sd->release)."<br/>";
-				//echo "".$sd->server."<br/>";
+				echo "".$sd->server."<br/>";
 				echo "</tr>";
       	}
       	

@@ -40,7 +40,6 @@
 
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
-$route['argon'] = "welcome";
 $route['firelogs/lightson'] = "firelogs/lightson";
 $route['firelogs/lightsoff'] = "firelogs/lightsoff";
 $route['firelogs/:any'] = "firelogs";

@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Argon extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -34,10 +34,14 @@ class Welcome extends CI_Controller {
 	{
 		$data['title'] = 'BetaWatch';
 		$data['projectname'] = 'BetaWatch';
-		$data['main_content'] = 'home';
+		$data['main_content'] = 'welcome_message';
 		$data['where'] = $this->uri->segment(1);
-		$data['whereiam'] = $this->uri->segment(1);
+		$data['whereiam'] = 'argon';
 		$data['navigation'] = $this->read->servernames();
+		$data['overview'] = $this->read->history($this->uri->segment(1));
+		$data['enviorment01'] = $this->read->server01($this->uri->segment(1));
+		$data['enviorment02'] = $this->read->server02($this->uri->segment(1));
+		$data['history'] = $this->read->history($this->uri->segment(1));
 		if($this->session->userdata('enable_profiler') == 'TRUE'){
 			$this->output->enable_profiler(TRUE);
 		}
