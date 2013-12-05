@@ -32,18 +32,30 @@ class Read extends CI_Model {
     	return $data;
     }
     
-    public function server01($envirnoment){
-    	$data = $this->rest->get('latest/server/'.$envirnoment.'betafe01');
+    public function servers(){
+    	$data = array();
+    	$names = $this->rest->get('latest/_all');
+    	sort($names);
+    	foreach ($names as $name){
+    		foreach ($name as $server){
+    			$data[].= $server->server;
+    		}
+    	}
     	return $data;
     }
     
-    public function server02($envirnoment){
-    	$data = $this->rest->get('latest/server/'.$envirnoment.'betafe02');
+    public function server($envirnoment){
+    	$data = $this->rest->get('latest/server/'.$envirnoment);
+    	return $data;
+    }
+    
+    public function overview($envirnoment){
+    	$data = $this->rest->get('/latest/_enviro/'.$envirnoment);
     	return $data;
     }
     
     public function history($envirnoment){
-    	$data = $this->rest->get('/latest/_enviro/'.$envirnoment);
+    	$data = $this->rest->get('/history/_enviro/'.$envirnoment);
     	return $data;
     }
 }   

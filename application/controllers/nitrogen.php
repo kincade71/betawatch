@@ -38,8 +38,7 @@ class Nitrogen extends CI_Controller {
 		$data['whereiam'] = $this->uri->segment(1);
 		$data['navigation'] = $this->read->servernames();
 		$data['overview'] = $this->read->history($this->uri->segment(1));
-		$data['enviorment01'] = $this->read->server01($this->uri->segment(1));
-		$data['enviorment02'] = $this->read->server02($this->uri->segment(1));
+		$data['server'] = preg_grep("/".$this->uri->segment(1)."/",$this->read->servers());
 		$data['history'] = $this->read->history($this->uri->segment(1));
 		if($this->session->userdata('enable_profiler') == 'TRUE'){
 			$this->output->enable_profiler(TRUE);
