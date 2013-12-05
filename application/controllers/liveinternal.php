@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Live extends CI_Controller {
+class Liveinternal extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,12 +21,13 @@ class Live extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-	if($this->input->cookie('lights')){
-			$lights = array(
-					'lights'  => $this->input->cookie('lights'),
-			);
-			$this->session->set_userdata($lights);
-		}
+		
+		if($this->input->cookie('lights')){
+				$lights = array(
+						'lights'  => $this->input->cookie('lights'),
+				);
+				$this->session->set_userdata($lights);
+			}
 	}
 	
 	public function index()
@@ -37,9 +38,9 @@ class Live extends CI_Controller {
 		$data['where'] = $this->uri->segment(1);
 		$data['whereiam'] = $this->uri->segment(1);
 		$data['navigation'] = $this->read->servernames();
-		$data['enviorment01'] = $this->read->history($this->uri->segment(1));
-		$data['enviorment02'] = $this->read->history($this->uri->segment(1));
-		$data['history'] = $this->read->history($this->uri->segment(1));
+		$data['enviorment01'] = $this->read->history('live-internal');
+		$data['enviorment02'] = $this->read->history('live-internal');
+		$data['history'] = $this->read->history('live-internal');
 		if($this->session->userdata('enable_profiler') == 'TRUE'){
 			$this->output->enable_profiler(TRUE);
 		}
