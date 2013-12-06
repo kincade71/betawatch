@@ -35,7 +35,11 @@ body {
     <![endif]-->
 
     <!-- Favicons and touch icons -->
-    <link rel="shortcut icon" href="<?= base_url()?>img/favicon.ico">
+    <link rel="shortcut icon" href="<?= base_url()?>img/AIRApp_16.png">
+    <link rel="shortcut icon" href="<?= base_url()?>img/AIRApp_32.png">
+    <link rel="shortcut icon" href="<?= base_url()?>img/AIRApp_48.png">
+    <link rel="shortcut icon" href="<?= base_url()?>img/AIRApp_128.png">
+    <link rel="shortcut icon" href="<?= base_url()?>img/AIRApp_16.png">
     <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?= base_url()?>img/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?= base_url()?>img/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?= base_url()?>img/apple-touch-icon-72-precomposed.png">
