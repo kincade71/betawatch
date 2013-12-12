@@ -62,7 +62,7 @@ class Liveinternal extends CI_Controller {
 		);
 		
 		$this->input->set_cookie($cookie);
-		redirect(base_url());
+		redirect(base_url().'/'.$this->uri->segment(1));
 	}
 	
 	public function lightson(){
@@ -80,7 +80,7 @@ class Liveinternal extends CI_Controller {
 		);
 		
 		$this->input->set_cookie($cookie);
-		redirect(base_url());
+		redirect(base_url().'/'.$this->uri->segment(1));
 	}
 }
 

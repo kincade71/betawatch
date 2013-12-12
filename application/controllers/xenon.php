@@ -37,6 +37,7 @@ class Xenon extends CI_Controller {
 		$data['where'] = $this->uri->segment(1);
 		$data['whereiam'] = $this->uri->segment(1);
 		$data['navigation'] = $this->read->servernames();
+		$data['overview'] = $this->read->history($this->uri->segment(1));
 		$data['server'] = preg_grep("/".$this->uri->segment(1)."/",$this->read->servers());
 		$data['history'] = $this->read->history($this->uri->segment(1));
 		if($this->session->userdata('enable_profiler') == 'TRUE'){
@@ -60,7 +61,7 @@ class Xenon extends CI_Controller {
 		);
 		
 		$this->input->set_cookie($cookie);
-		redirect(base_url());
+		redirect(base_url().'/'.$this->uri->segment(1));
 	}
 	
 	public function lightson(){
@@ -78,7 +79,7 @@ class Xenon extends CI_Controller {
 		);
 		
 		$this->input->set_cookie($cookie);
-		redirect(base_url());
+		redirect(base_url().'/'.$this->uri->segment(1));
 	}
 }
 
