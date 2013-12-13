@@ -30,7 +30,7 @@
 			    		echo "alert alert-warning";
 			    		break;
 				    default:
-				       echo "<strong>Code base not defined</strong><br/>";
+				       echo "alert alert-warning";
 				}
 				echo'">';
 				echo "<td>";
@@ -73,7 +73,7 @@
 			    		echo "alert alert-warning";
 			    		break;
 				    default:
-				       echo "<strong>Code base not defined</strong><br/>";
+				       echo "alert alert-warning";
 				}
 				echo'">';
 				echo "<td>";
@@ -116,7 +116,7 @@
  					        echo "alert alert-error";
  					        break;
  					    default:
- 					       echo "<strong>Code base not defined</strong><br/>";
+ 					       echo "alert alert-warning";
  					}
  					echo'">';
  					echo "<td>";
@@ -131,7 +131,7 @@
  					        echo "FRU<br/>";
  					        break;
  					    default:
- 					       echo "<strong>Code base not defined</strong><br/>";
+ 					       echo ucfirst($sd->codebase).' - ';
  					}
  					echo "".$sd->datestamp."<br/>";
  					echo "".$sd->md5."<br/>";
