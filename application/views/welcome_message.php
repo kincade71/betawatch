@@ -26,9 +26,6 @@
 				    case '0':
 				        echo "alert alert-error";
 				        break;
-				    case ($sd->datestamp - time())<=10:
-			    		echo "alert alert-warning";
-			    		break;
 				    default:
 				       echo "alert alert-warning";
 				}
@@ -46,7 +43,7 @@
 				       echo ucfirst($sd->codebase).' - ';
 				}
 				echo "".$sd->release." - ";
-				echo "".$sd->datestamp."";
+				echo date('m-d-y h:i:s',$sd->datestamp/ 1000) .' - '. $this->read->secs_to_h(time() - $sd->datestamp/ 1000);
 				//echo "".$sd->md5."<br/>";
 				//echo "".$sd->server."<br/>";
 				echo "</tr>";
@@ -69,9 +66,6 @@
 				    case '0':
 				        echo "alert alert-error";
 				        break;
-				    case ($sd->datestamp - time())<=10:
-			    		echo "alert alert-warning";
-			    		break;
 				    default:
 				       echo "alert alert-warning";
 				}
@@ -89,7 +83,7 @@
 				       echo ucfirst($sd->codebase).' - ';
 				}
 				echo "".$sd->release." - ";
-				echo "".$sd->datestamp."";
+				echo "".date('m-d-Y h:i:s',$sd->datestamp/ 1000)."";
 				//echo "".$sd->md5."<br/>";
 				//echo "".$sd->server."<br/>";
 				echo "</tr>";
@@ -133,10 +127,11 @@
  					    default:
  					       echo ucfirst($sd->codebase).' - ';
  					}
- 					echo "".$sd->datestamp."<br/>";
+ 					echo "".date('m-d-Y h:i:s',$sd->datestamp/ 1000)."<br/>";
  					echo "".$sd->md5."<br/>";
- 					echo "".date('m-d-Y',$sd->release)."<br/>";
+ 					echo "".$sd->release."<br/>";
  					echo "".$sd->server."<br/>";
+ 					echo "".$this->read->secs_to_h(time() - $sd->datestamp/ 1000)."";
  					echo "</tr>";
  	      	}
  	      	
