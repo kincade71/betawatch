@@ -18,16 +18,17 @@
     <table class="table table-bordered table-striped table-hover">
       <?php      	
       	foreach ($overview as $sd) {
+      		$time = date('s',(time() - ($sd->datestamp/ 1000)));
 				echo '<tr class="';
-				switch ($sd->success) {
-				    case '1':
+				switch ($time) {
+				    case ($time <= 60):
 				        echo "alert alert-success";
 				        break;
-				    case '0':
+				    case ($time >= 300):
 				        echo "alert alert-error";
 				        break;
 				    default:
-				       echo "alert alert-warning";
+				       echo "alert alert-success";
 				}
 				echo'">';
 				echo "<td>";
