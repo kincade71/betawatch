@@ -27,6 +27,7 @@ body {
     <link href="<?= base_url()?>css/bootstrap-responsive.css" rel="stylesheet">
     <link href="<?= base_url()?>css/app.css" rel="stylesheet">
     <link href="<?= base_url()?>css/font-awesome.min.css" rel="stylesheet">
+      <link href="<?= base_url()?>css/jquery.dataTables.css" rel="stylesheet">
     <!-- End CSS -->
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -45,7 +46,9 @@ body {
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?= base_url()?>img/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="<?= base_url()?>img/apple-touch-icon-57-precomposed.png">-->
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="<?= base_url()?>/js/bootstrap.js"></script>
+	<script src="<?= base_url()?>js/jquery.dataTables.min.js"></script>
 
     <body>
 <!--  HEADER HERE   -->
@@ -57,12 +60,12 @@ body {
       </a>
           <div class="nav-collapse">
           <?php if($this->session->userdata('lights') == 'inverse'){ ?>
-			<a href="<?= base_url()?><?= ($whereiam)?$whereiam.'/':'welcome/' ?>lightson" class="btn btn-link pull-right lightson tipping hidden-phone" data-toggle="tooltip" title data-original-title="Click to turn the lights on." data-placement="bottom"><i class="fa fa-lightbulb-o fa-lg"></i></a>
+			<a href="<?= base_url()?><?= ($whereiam)?$whereiam.'/':'welcome/' ?>lightson" class="btn btn-link pull-right lightson  hidden-phone tipping" data-toggle="tooltip" title data-original-title="Click to turn the lights on." data-placement="bottom"><i class="fa fa-lightbulb-o fa-lg"></i></a>
 			<hr class="visible-phone"/>
 			<a href="<?= base_url()?><?= ($whereiam)?$whereiam.'/':'welcome/' ?>lightson" class="btn btn-primary btn-block pull-right lightson tipping visible-phone" data-toggle="tooltip" title data-original-title="Click to turn the lights on." data-placement="bottom"><i class="fa fa-lightbulb-o fa-lg"></i></a>
 			<br class="visible-phone"/>          
           <?php }else{?>
-          	<a href="<?= base_url()?><?= ($whereiam)?$whereiam.'/':'welcome/' ?>lightsoff" class="btn btn-link pull-right tipping hidden-phone" data-toggle="tooltip" title data-original-title="Click to turn the lights off." data-placement="bottom"><i class="fa fa-lightbulb-o fa-lg"></i></a>
+          	<a href="<?= base_url()?><?= ($whereiam)?$whereiam.'/':'welcome/' ?>lightsoff" class="btn btn-link pull-right  hidden-phone tipping" data-toggle="tooltip" title data-original-title="Click to turn the lights off." data-placement="bottom"><i class="fa fa-lightbulb-o fa-lg"></i></a>
           	<hr class="visible-phone"/>
           	<a href="<?= base_url()?><?= ($whereiam)?$whereiam.'/':'welcome/' ?>lightsoff" class="btn btn-primary btn-block pull-right tipping visible-phone" data-toggle="tooltip" title data-original-title="Click to turn the lights off." data-placement="bottom"><i class="fa fa-lightbulb-o fa-lg"></i></a>
           	<br class="visible-phone"/>
@@ -70,7 +73,7 @@ body {
 
         <ul class="nav">
         <?php foreach($navigation as $nav){?>
-        		<li class="<?= ($whereiam == str_replace('-', '', $nav))?'active':NULL; ?>"><a href="<?= base_url() ?><?= str_replace('-', '', $nav) ?>" class="tipping" data-placement="bottom" title="<?= ucfirst($nav) ?>"><?= ucfirst($nav) ?></a></li>
+        		<li class="<?= ($whereiam == str_replace('-', '', $nav))?'active':NULL; ?>"><a href="<?= base_url() ?><?= str_replace('-', '', $nav) ?>" class="" data-placement="bottom" title="<?= ucfirst($nav) ?>"><?= ucfirst($nav) ?></a></li>
         <?php }?>
             </ul>
       </div>

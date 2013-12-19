@@ -15,7 +15,17 @@
   
    <div class="tab-pane active" id="tab1">
     <h1 class="lead pull-right"><?= $whereiam?> overview</h1>
+    
     <table class="table table-bordered table-striped table-hover">
+    <thead> 
+<tr> 
+    <th>Server</th>
+    <th>Codebase</th>
+    <th>Release</th>
+    <th>Datestamp</th>
+   </tr>
+   </thead>
+   <tbody> 
       <?php      	
       	foreach ($overview as $sd) {
       		$time = date('s',(time() - ($sd->datestamp/ 1000)));
@@ -32,31 +42,41 @@
 				}
 				echo'">';
 				echo "<td>";
-				echo $sd->server.' - ';
+				echo $sd->server.'</td><td>';
 				switch ($sd->codebase) {
 				    case 'fe':
-				        echo "Front End - ";
+				        echo "Front End";
 				        break;
 				    case 'be':
-				        echo "Back End - ";
+				        echo "Back End";
 				        break;
 				    default:
-				       echo ucfirst($sd->codebase).' - ';
+				       echo ucfirst($sd->codebase).'';
 				}
-				echo "".$sd->release." - ";
-				echo date('m-d-y h:i:s',$sd->datestamp/ 1000) .' - '. $this->read->secs_to_h(time() - $sd->datestamp/ 1000);
+				echo "</td><td>".$sd->release."";
+				echo "</td><td>".date('m-d-y h:i:s',$sd->datestamp/ 1000) .' - '. $this->read->secs_to_h(time() - $sd->datestamp/ 1000);
 				//echo "".$sd->md5."<br/>";
 				//echo "".$sd->server."<br/>";
-				echo "</tr>";
+				echo "</td></tr>";
       	}
       	
       
-      ?></table>
+      ?>
+      <tbody> </table>
     </div>
     
      <div class="tab-pane" id="tab2">
     <h1 class="lead pull-right"><?= $whereiam?> history</h1>
     <table class="table table-bordered table-striped table-hover">
+    <thead> 
+<tr> 
+    <th>Server</th>
+    <th>Codebase</th>
+    <th>Release</th>
+    <th>Datestamp</th>
+   </tr>
+   </thead>
+   <tbody> 
       <?php      	
       	foreach ($history as $sd) {
 				echo '<tr class="';
@@ -72,26 +92,26 @@
 				}
 				echo'">';
 				echo "<td>";
-				echo $sd->server.' - ';
+				echo $sd->server.'</td><td>';
 				switch ($sd->codebase) {
 				    case 'fe':
-				        echo "Front End - ";
+				        echo "Front End";
 				        break;
 				    case 'be':
-				        echo "Back End - ";
+				        echo "Back End";
 				        break;
 				    default:
-				       echo ucfirst($sd->codebase).' - ';
+				       echo ucfirst($sd->codebase).'';
 				}
-				echo "".$sd->release." - ";
-				echo "".date('m-d-Y h:i:s',$sd->datestamp/ 1000)."";
+				echo "</td><td>".$sd->release."";
+				echo "</td><td>".date('m-d-Y h:i:s',$sd->datestamp/ 1000)."";
 				//echo "".$sd->md5."<br/>";
 				//echo "".$sd->server."<br/>";
-				echo "</tr>";
+				echo "</td></tr>";
       	}
       	
       
-      ?></table>
+      ?></tbody></table>
     </div>
     
  <?php 
@@ -144,5 +164,6 @@
     </div>
   </div>
   
+</div>
 </div>
 
