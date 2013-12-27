@@ -1,14 +1,3 @@
-	<h1 class="lead pull-right"><?= $whereiam?> overview</h1>
-    <table class="table table-bordered table-striped table-hover">
-    <thead> 
-	<tr> 
-    <th>Server</th>
-    <th>Codebase</th>
-    <th>Release</th>
-    <th>Datestamp</th>
-   </tr>
-   </thead>
-	   <tbody> 
 	      <?php      	
 	      	foreach ($overview as $sd) {
 	      		$time = date('s',(time() - ($sd->datestamp/ 1000)));
@@ -45,5 +34,3 @@
 	      	
 	      
 	      ?>
-	      <tbody> 
-	   </table>

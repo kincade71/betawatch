@@ -14,12 +14,25 @@
   <div class="tab-content">
   
    <div class="tab-pane active overview" id="tab1" data="overview-<?= $whereiam?>">
-	
+		<h1 class="lead pull-right"><?= $whereiam?> overview</h1>
+    <table class="table table-bordered table-striped table-hover">
+    <thead> 
+	<tr> 
+    <th>Server</th>
+    <th>Codebase</th>
+    <th>Release</th>
+    <th>Datestamp</th>
+   </tr>
+   </thead>
+	   <tbody id="overview"> 
+	   
+	   	      <tbody> 
+	   </table>
     </div>
     
      <div class="tab-pane" id="tab2">
     <h1 class="lead pull-right"><?= $whereiam?> history</h1>
-    <table class="table table-bordered table-striped table-hover">
+    <table class="table table-bordered table-striped table-hover sort">
     <thead> 
 <tr> 
     <th>Server</th>

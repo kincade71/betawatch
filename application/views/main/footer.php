@@ -23,7 +23,7 @@
 <script>
 
 $(document).ready(function() {
-    $('table').dataTable( {
+    $('.sort').dataTable( {
         "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>"
     } );
 } );
@@ -57,6 +57,6 @@ $('#myTab a').click(function (e) {
 <script>
 window.setInterval(function(){
 	$(".overview").overview();
-}, 10000);
+}, 1000);
 </script>
 </body></html>

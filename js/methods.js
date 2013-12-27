@@ -39,7 +39,7 @@ jQuery.fn.overview = function()
 				url:		'ajaxs/overview',
 				data:		dataString,
 				success:	function(html){
-					$('#tab1').html(html).tablesearch();
+					$('#overview').html(html);
 				}
 			});
 			
@@ -52,7 +52,7 @@ jQuery.fn.refresh = function()
 
 jQuery.fn.tablesearch = function()
 {
-	$('table').dataTable( {
+	$('#overview').dataTable( {
 	    "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>"
 	} );
 	
