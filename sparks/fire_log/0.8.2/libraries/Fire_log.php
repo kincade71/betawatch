@@ -87,11 +87,12 @@ class Fire_log{
 			{
 				$data[ 'today' ] = FALSE;
 			}
-
+			
 			$data[ 'list' ] = $this->list_files();
 			$data[ 'log_contents' ] = $this->get_file( $this->log_file );
 			$data[ 'log_file_name' ] = $this->log_file;
 			$data[ 'pagination_links' ] = $this->CI->pagination->create_links();
+			
 			$data['whereiam'] = 'systems';
 			$view_dir = dirname(__FILE__).DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR;
 			

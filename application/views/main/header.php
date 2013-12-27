@@ -47,9 +47,11 @@ body {
     <link rel="apple-touch-icon-precomposed" href="<?= base_url()?>img/apple-touch-icon-57-precomposed.png">-->
 
   	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<script src="<?= base_url()?>/js/bootstrap.js"></script>
+	<script src="<?= base_url()?>js/bootstrap.js"></script>
 	<script src="<?= base_url()?>js/jquery.dataTables.min.js"></script>
-
+	<script src="<?= base_url()?>js/docready.js"></script>
+	<script src="<?= base_url()?>js/methods.js"></script>
+	
     <body>
 <!--  HEADER HERE   -->
 <div class="navbar navbar-fixed-top">

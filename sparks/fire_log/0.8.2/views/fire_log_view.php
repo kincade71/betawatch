@@ -73,13 +73,6 @@ body {
           <?php }?>
 
         <ul class="nav">
-              <li class="<?= ($whereiam == NULL)?'active':NULL; ?>"><a href="<?= base_url() ?>" class="tipping" data-placement="bottom" title="Home">Argon</a></li>
-              <li class="<?= ($whereiam == 'customeracceptence')?'active':NULL; ?>"><a href="<?= base_url() ?>customeracceptence/" class="tipping" data-placement="bottom" title="Customeracceptance">Customeracceptence</a></li>
-              <li class="<?= ($whereiam == 'helium')?'active':NULL; ?>"><a href="<?= base_url() ?>helium/" class="tipping" data-placement="bottom" title="Helium">Helium</a></li>
-              <li class="<?= ($whereiam == 'neon')?'active':NULL; ?>"><a href="<?= base_url() ?>neon/" class="tipping" data-placement="bottom" title="Neon">Neon</a></li>
-              <li class="<?= ($whereiam == 'nitrogen')?'active':NULL; ?>"><a href="<?= base_url() ?>nitrogen/" class="tipping" data-placement="bottom" title="Nitrogen">Nitrogen</a></li>
-              <li class="<?= ($whereiam == 'oxygen')?'active':NULL; ?>"><a href="<?= base_url() ?>oxygen/" class="tipping" data-placement="bottom" title="Oxygen">Oxygen</a></li>
-              <li class="<?= ($whereiam == 'xenon')?'active':NULL; ?>"><a href="<?= base_url() ?>xenon/" class="tipping" data-placement="bottom" title="Xenon">Xenon</a></li>
             </ul>
       </div>
         </div>

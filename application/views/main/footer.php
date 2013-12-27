@@ -54,5 +54,9 @@ $('#myTab a').click(function (e) {
 	  $(this).tab('show');
 	})
 </script>
-
+<script>
+window.setInterval(function(){
+	$(".overview").overview();
+}, 10000);
+</script>
 </body></html>
