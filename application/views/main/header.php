@@ -49,8 +49,10 @@ body {
   	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script src="<?= base_url()?>js/bootstrap.js"></script>
 	<script src="<?= base_url()?>js/jquery.dataTables.min.js"></script>
+	<script src="<?= base_url()?>js/jquery.cookie.js"></script>
 	<script src="<?= base_url()?>js/docready.js"></script>
 	<script src="<?= base_url()?>js/methods.js"></script>
+	<script src="<?= base_url()?>js/jquery.html5storage.min.js"></script>
 	
     <body>
 <!--  HEADER HERE   -->
@@ -72,7 +74,15 @@ body {
           	<a href="<?= base_url()?><?= ($whereiam)?$whereiam.'/':'welcome/' ?>lightsoff" class="btn btn-primary btn-block pull-right tipping visible-phone" data-toggle="tooltip" title data-original-title="Click to turn the lights off." data-placement="bottom"><i class="fa fa-lightbulb-o fa-lg"></i></a>
           	<br class="visible-phone"/>
           <?php }?>
-
+          <div id="button">
+          <?php if($_COOKIE['desktop_notifications_enabled']){?>
+			<input type="button" class="btn btn-link pull-right hidden-phone" id="watch" value="Enable Desktop Notifications for <?= ucfirst($whereiam)?>"></input>
+			<input id="where" type="hidden" value="<?= $whereiam ?>"></input>
+		  <?php }else{?>
+		  	<input type="button" class="btn btn-link pull-right hidden-phone" id="ask_permission" value="Enable Desktop Notifications"></input>	
+		  	<input id="where" type="hidden" value="<?= $whereiam ?>"></input>
+		  <?php }?>
+		  </div>
         <ul class="nav">
         <?php foreach($navigation as $nav){?>
         		<li class="<?= ($whereiam == str_replace('-', '', $nav))?'active':NULL; ?>"><a href="<?= base_url() ?><?= str_replace('-', '', $nav) ?>" class="" data-placement="bottom" title="<?= ucfirst($nav) ?>"><?= ucfirst($nav) ?></a></li>

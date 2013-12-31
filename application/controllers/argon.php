@@ -36,7 +36,7 @@ class Argon extends CI_Controller {
 		$data['projectname'] = 'BetaWatch';
 		$data['main_content'] = 'welcome_message';
 		$data['where'] = $this->uri->segment(1);
-		$data['whereiam'] = 'argon';
+		$data['whereiam'] = $this->uri->segment(1);
 		$data['navigation'] = $this->read->servernames();
 		$data['server'] = preg_grep("/".$this->uri->segment(1)."/",$this->read->servers());
 		$data['overview'] = $this->read->overview($this->uri->segment(1));
@@ -47,13 +47,6 @@ class Argon extends CI_Controller {
 		$this->load->view('main/main_template',$data);
 	}
 	
-	public function overview()
-	{
-		$data['where'] = $this->input->post('whereami');
-		$data['whereiam'] = $this->input->post('whereami');
-		$data['overview'] = $this->read->overview($this->input->post('whereami'));
-		$this->load->view('overview',$data);
-	}
 	
 	public function lightsoff(){
 		$lights = array(

@@ -11,7 +11,7 @@
       <div class="span4">
       </div>
       <div class="span4">
-        <p class="pull-right"><a href="<?= base_url() ?>user_guide/"><i class="fa fa-fire"></i> Framework UG</a> | </p>
+        <p class="pull-right"><a href="<?= base_url() ?>user_guide/"><i class="fa fa-fire"></i> Framework UG</a> | <a href="<?= base_url()?>app/betawatchair.air.zip">BetaWatch Desktop</a></p>
       </div>
     </div>
   </footer>
@@ -59,4 +59,23 @@ window.setInterval(function(){
 	$(".overview").overview();
 }, 1000);
 </script>
+
+<script>
+if (window.webkitNotifications) {
+    jQuery.fn.send_notification();
+  }
+</script>
+<script>
+if (window.webkitNotifications) {
+	jQuery.fn.check_permission();
+  }
+</script>
+
+<script>
+var where = $('#where').val();
+
+    if($.cookie('desktop_notifications_enabled_'+where) == 'true'){
+    	$('#watch').remove();
+    }
+    </script>
 </body></html>
