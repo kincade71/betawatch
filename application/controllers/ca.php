@@ -40,6 +40,9 @@ class Ca extends CI_Controller {
 		$data['overview'] = $this->read->overview($this->uri->segment(1));
 		$data['server'] = preg_grep("/".$this->uri->segment(1)."/",$this->read->servers());
 		$data['history'] = $this->read->history($this->uri->segment(1));
+		$data['notes'] = $this->read->notes($this->uri->segment(1));
+		$data['comments'] = $this->read->comments($this->uri->segment(1));
+		$data['ratings'] = $this->read->ratings($this->uri->segment(1));
 		if($this->session->userdata('enable_profiler') == 'TRUE'){
 			$this->output->enable_profiler(TRUE);
 		}

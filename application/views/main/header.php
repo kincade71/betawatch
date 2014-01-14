@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Richard Robinson http://www.richardorobinson.com">
-
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
     <!-- CSS  -->
     <?php if($this->session->userdata('lights') == 'inverse'){ ?>
     	<link href="<?= base_url()?>css/lightsoff.css" rel="stylesheet">
@@ -46,14 +46,14 @@ body {
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?= base_url()?>img/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="<?= base_url()?>img/apple-touch-icon-57-precomposed.png">-->
 
-  	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="<?= base_url()?>js/bootstrap.js"></script>
 	<script src="<?= base_url()?>js/jquery.dataTables.min.js"></script>
 	<script src="<?= base_url()?>js/jquery.cookie.js"></script>
 	<script src="<?= base_url()?>js/docready.js"></script>
 	<script src="<?= base_url()?>js/methods.js"></script>
 	<script src="<?= base_url()?>js/jquery.html5storage.min.js"></script>
-	
+	<script src="<?= base_url()?>js/bootstrap-rating-input.min.js"></script>
     <body>
 <!--  HEADER HERE   -->
 <div class="navbar navbar-fixed-top">
@@ -76,10 +76,16 @@ body {
           <?php }?>
           <div id="button">
           <?php if($_COOKIE['desktop_notifications_enabled']){?>
+          	<?php if($whereiam != NULL){?>
 			<input type="button" class="btn btn-link pull-right hidden-phone" id="watch" value="Enable Desktop Notifications for <?= ucfirst($whereiam)?>"></input>
 			<input id="where" type="hidden" value="<?= $whereiam ?>"></input>
+			<?php }?>
 		  <?php }else{?>
 		  	<input type="button" class="btn btn-link pull-right hidden-phone" id="ask_permission" value="Enable Desktop Notifications"></input>	
+		  	<input id="where" type="hidden" value="<?= $whereiam ?>"></input>
+		  <?php }?>
+		  <?php if($_COOKIE['desktop_notifications_enabled_'.$whereiam]){?>
+		  	<input type="button" class="btn btn-link pull-right hidden-phone" id="stopwatch" value="Disable Desktop Notifications for <?= ucfirst($whereiam)?>"></input>
 		  	<input id="where" type="hidden" value="<?= $whereiam ?>"></input>
 		  <?php }?>
 		  </div>

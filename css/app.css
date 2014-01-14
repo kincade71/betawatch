@@ -53,3 +53,16 @@ table.table thead .sorting_desc { background: url('img/sort_desc.png') no-repeat
  
 table.table thead .sorting_asc_disabled { background: url('img/sort_asc_disabled.png') no-repeat center right; }
 table.table thead .sorting_desc_disabled { background: url('img/sort_desc_disabled.png') no-repeat center right
+}
+.dataTables_wrapper .row{
+	width:102%;
+}
+
+
+
+
+
+
+
+
+

@@ -41,6 +41,9 @@ class Liveinternal extends CI_Controller {
 		$data['overview'] = $this->read->overview('live-internal');
 		$data['server'] = preg_grep("/live-internal/",$this->read->servers());
 		$data['history'] = $this->read->history('live-internal');
+		$data['notes'] = $this->read->notes($this->uri->segment(1));
+		$data['comments'] = $this->read->comments($this->uri->segment(1));
+		$data['ratings'] = $this->read->ratings($this->uri->segment(1));
 		if($this->session->userdata('enable_profiler') == 'TRUE'){
 			$this->output->enable_profiler(TRUE);
 		}

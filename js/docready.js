@@ -9,4 +9,7 @@ $(document).ready(function(){
 	if($("#watch")[0]){
 		$("#watch").watch();
 	}
+	if($("#stopwatch")[0]){
+		$("#stopwatch").stopwatch();
+	}
 });

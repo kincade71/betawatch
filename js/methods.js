@@ -68,7 +68,8 @@ jQuery.fn.watch = function()
     	
     	$.cookie('desktop_notifications_enabled_'+where, 'true', { expires: 1825, path: '/' });
     	$('#watch').remove();
-    	
+    	$('#button').html('<input type="button" class="btn btn-link pull-right hidden-phone" id="stopwatch" value="Disable Desktop Notifications for '+where+'"></input><input id="where" type="hidden" value="'+where+'"></input>');
+    	$("#stopwatch").stopwatch();
     	switch (where)
 		{
 			case 'liveinternal':
@@ -86,6 +87,68 @@ jQuery.fn.watch = function()
 			}
 		});
     });
+}
+
+//remove a sever to watchlist
+jQuery.fn.stopwatch = function()
+{
+    $('#stopwatch').click(function(e) {
+    	var where = $('#where').val();
+    	
+    	$.removeCookie('desktop_notifications_enabled_'+where);
+    	$('#stopwatch').remove();
+    	$('#button').html('<input type="button" class="btn btn-link pull-right hidden-phone" id="watch" value="Enable Desktop Notifications for '+where+'"></input><input id="where" type="hidden" value="'+where+'"></input>');
+    	$("#watch").watch();
+    	
+    	switch (where)
+		{
+			case 'liveinternal':
+				where = 'live-internal'
+				break;
+				
+		}
+		var dataString = 'where='+ where;
+		//alert(dataString);
+		$.ajax({
+			type:		'POST',
+			url:		'ajaxs/stopwatch',
+			data:		dataString,
+			success:	function(html){
+				console.log(html);
+			}
+		});
+    });
+}
+
+//interval to "look" for changes
+jQuery.fn.watching = function()
+{
+    	var where = $('#where').val();
+    	
+
+    	
+    	switch (where)
+		{
+			case 'liveinternal':
+				where = 'live-internal'
+				break;
+				
+		}
+		var dataString = 'where='+ where;
+		//alert(dataString);
+		$.ajax({
+			type:		'POST',
+			url:		'ajaxs/watching',
+			data:		dataString,
+			success:	function(html){	
+				//console.log(html);
+				if(html != ''){
+					jQuery.fn.send_notification(html);
+				}
+				
+			}
+		});
+		
 }
 
 jQuery.fn.check_permission = function(where) {
@@ -122,15 +185,46 @@ jQuery.fn.tablesearch = function()
 }
 
 //send notification
-jQuery.fn.send_notification = function(){
-// Display the plain text notification
-  //e.preventDefault();
-  var title = $('#plain_title').val(),
-      message = $('#plain_message').val(),
-      notification;
+jQuery.fn.send_notification = function(message){
+	var release = message.split('-')[0];
+	var codebase = message.split('-')[1];
+	var server = message.split('-')[2];
+	var where = message.split('-')[3];
+	switch(codebase)
+	{
+	case 'be':
+		codebase = 'backend';
+	  break;
+	case 'fe':
+		codebase = 'frontend';
+	  break;
+	default:
+		codebase = codebase;
+	}
 
   // Create a new notification
-  notification = window.webkitNotifications.createNotification('http://intranet.forrent.com/betawatch/img/AIRApp_128.png', title, message);
+  notification = window.webkitNotifications.createNotification('http://intranet.forrent.com/betawatch/img/AIRApp_128.png', where+' updated', codebase +' to release '+ release +' on server '+ server);
   // Display the notification, calling close() on notification will dismiss it
   notification.show();
+	var where = $('#where').val();
+	
+
+	
+	switch (where)
+	{
+		case 'liveinternal':
+			where = 'live-internal'
+			break;
+			
+	}
+  var dataString = 'where='+ where;
+	//console.log(dataString);
+	$.ajax({
+		type:		'POST',
+		url:		'ajaxs/watch',
+		data:		dataString,
+		success:	function(html){
+			console.log(html);
+		}
+	});
 }

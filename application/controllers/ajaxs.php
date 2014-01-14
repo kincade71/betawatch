@@ -47,6 +47,15 @@ class Ajaxs extends CI_Controller {
 		$this->create->createFile($this->input->post('where'),$this->read->overview($this->input->post('where')),$this->input->ip_address());
 	}
 	
+	public function stopwatch()
+	{
+		$this->delete->deleteFile($this->input->post('where'),$this->input->ip_address());
+	}
+	
+	public function watching()
+	{
+		echo $this->read->watch($this->input->post('where'),$this->input->ip_address());
+	}
 
 }
 

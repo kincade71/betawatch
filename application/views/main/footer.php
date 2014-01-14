@@ -59,12 +59,12 @@ window.setInterval(function(){
 	$(".overview").overview();
 }, 1000);
 </script>
-
 <script>
-if (window.webkitNotifications) {
-    jQuery.fn.send_notification();
-  }
+window.setInterval(function(){
+	jQuery.fn.watching();
+}, 5000);
 </script>
+
 <script>
 if (window.webkitNotifications) {
 	jQuery.fn.check_permission();

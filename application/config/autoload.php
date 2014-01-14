@@ -109,7 +109,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('read','create');
+$autoload['model'] = array('read','create','delete');
 
 /*
 | -------------------------------------------------------------------
@@ -120,6 +120,6 @@ $autoload['model'] = array('read','create');
 |	$autoload['sparks'] = array('spark1', 'spark2');
 |
 */
-$autoload['sparks'] = array();
+$autoload['sparks'] = array('restclient-2');
 /* End of file autoload.php */
 /* Location: ./application/config/autoload.php */

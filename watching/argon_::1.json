@@ -1,0 +1,79 @@
+[
+    {
+        "_id": {
+            "server": "argonbetajenkins01",
+            "codebase": "jenkinsjobs-beta"
+        },
+        "release": "057a584c8a181b0268ae6bd974fab2608bb2c645",
+        "datestamp": 1389207585309,
+        "location": "beta",
+        "server": "argonbetajenkins01",
+        "codebase": "jenkinsjobs-beta"
+    },
+    {
+        "_id": {
+            "server": "argonbetabe02",
+            "codebase": "be"
+        },
+        "release": "1387298767",
+        "datestamp": 1389207603682,
+        "location": "beta",
+        "server": "argonbetabe02",
+        "codebase": "be"
+    },
+    {
+        "_id": {
+            "server": "argonbetafe01",
+            "codebase": "fru"
+        },
+        "release": "1386688481",
+        "datestamp": 1389207610210,
+        "location": "beta",
+        "server": "argonbetafe01",
+        "codebase": "fru"
+    },
+    {
+        "_id": {
+            "server": "argonbetafe01",
+            "codebase": "fe"
+        },
+        "release": "1386803293",
+        "datestamp": 1389207616959,
+        "location": "beta",
+        "server": "argonbetafe01",
+        "codebase": "fe"
+    },
+    {
+        "_id": {
+            "server": "argonbetabe01",
+            "codebase": "be"
+        },
+        "release": "1387298767",
+        "datestamp": 1389207623460,
+        "location": "beta",
+        "server": "argonbetabe01",
+        "codebase": "be"
+    },
+    {
+        "_id": {
+            "server": "argonbetafe02",
+            "codebase": "fru"
+        },
+        "release": "1386688481",
+        "datestamp": 1389207629909,
+        "location": "beta",
+        "server": "argonbetafe02",
+        "codebase": "fru"
+    },
+    {
+        "_id": {
+            "server": "argonbetafe02",
+            "codebase": "fe"
+        },
+        "release": "1386803293",
+        "datestamp": 1389207635934,
+        "location": "beta",
+        "server": "argonbetafe02",
+        "codebase": "fe"
+    }
+]
